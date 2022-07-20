@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "application"
 }
 
 java {
@@ -12,10 +13,15 @@ repositories {
 }
 
 dependencies {
+    implementation 'com.google.ortools:ortools-java:9.3.10497' // hmmmmmm. what could this be doing here?
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 }
 
 test {
     useJUnitPlatform()
+}
+
+application {
+    mainClassName = "runner.Main"
 }
