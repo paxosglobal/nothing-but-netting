@@ -9,7 +9,7 @@ Code for a workshop at FinTech devcon 2022!
 2. Ensure that a java-editor is installed. Any editor will do, but I recommend [IntelliJ community edition](https://www.jetbrains.com/idea/download/)
 3. `git clone https://github.com/paxosglobal/nothing-but-netting.git`
 4. `cd nothing-but-netting`
-5. run the application. You should see action in your terminal followed by a score
+5. Run the application. You should see action in your terminal followed by a score
 	- `./gradlew run` - mac
 	- `gradlew.bat run` - windows
 6. Open the folder in your java-editor
