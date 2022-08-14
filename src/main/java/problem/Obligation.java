@@ -1,6 +1,6 @@
 package problem;
 
-public record Obligation(String fromParty, String toParty, Integer dollars) {
+public record Obligation(String fromParty, String toParty, Long dollars) {
     public Obligation {
         assert !fromParty.equals(toParty);
         assert dollars > 0;

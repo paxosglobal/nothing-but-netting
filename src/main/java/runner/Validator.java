@@ -28,7 +28,7 @@ public class Validator {
             final var prefTotal = resultObligations.stream()
                     .filter(o -> o.fromParty().equals(preference.counterPartyName()))
                     .filter(o -> o.toParty().equals(party.name()))
-                    .map(Obligation::dollars).reduce(0, Integer::sum);
+                    .map(Obligation::dollars).reduce(0L, Long::sum);
             if (prefTotal > preference.maxExposure()) {
                 throw new IllegalStateException(String.format("Solution breaks the rules. Payment total of %s from %s to %s breaks the max exposure of %s", prefTotal,
                         preference.counterPartyName(), party.name(), preference.maxExposure()));
@@ -36,9 +36,9 @@ public class Validator {
         });
     }
 
-    private static int calculateEffectOnParty(Collection<Obligation> obligations, String party) {
-        final var credits = obligations.stream().filter(obligation -> obligation.toParty().equals(party)).map(Obligation::dollars).reduce(0, Integer::sum);
-        final var debits = obligations.stream().filter(obligation -> obligation.fromParty().equals(party)).map(Obligation::dollars).reduce(0, Integer::sum);
+    private static long calculateEffectOnParty(Collection<Obligation> obligations, String party) {
+        final var credits = obligations.stream().filter(obligation -> obligation.toParty().equals(party)).map(Obligation::dollars).reduce(0L, Long::sum);
+        final var debits = obligations.stream().filter(obligation -> obligation.fromParty().equals(party)).map(Obligation::dollars).reduce(0L, Long::sum);
         return credits - debits;
     }
 }
