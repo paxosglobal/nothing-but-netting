@@ -23,10 +23,10 @@ public class Novator {
             throw new IllegalStateException("optimality not achieved");
         }
 
-        return createNovatedObligation(indexToParty, minCostFlow);
+        return createNovatedObligations(indexToParty, minCostFlow);
     }
 
-    private static LinkedList<Obligation> createNovatedObligation(String[] indexToParty, MinCostFlow minCostFlow) {
+    private static LinkedList<Obligation> createNovatedObligations(String[] indexToParty, MinCostFlow minCostFlow) {
         var novatedObligations = new LinkedList<Obligation>();
         for (int i = 0; i < minCostFlow.getNumArcs(); ++i) {
             novatedObligations.add(new Obligation(indexToParty[minCostFlow.getTail(i)], indexToParty[minCostFlow.getHead(i)], minCostFlow.getFlow(i)));
