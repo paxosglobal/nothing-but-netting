@@ -29,7 +29,9 @@ public class Novator {
     private static LinkedList<Obligation> createNovatedObligations(String[] indexToParty, MinCostFlow minCostFlow) {
         var novatedObligations = new LinkedList<Obligation>();
         for (int i = 0; i < minCostFlow.getNumArcs(); ++i) {
-            novatedObligations.add(new Obligation(indexToParty[minCostFlow.getTail(i)], indexToParty[minCostFlow.getHead(i)], minCostFlow.getFlow(i)));
+            if(minCostFlow.getFlow(i) != 0L) {
+                novatedObligations.add(new Obligation(indexToParty[minCostFlow.getTail(i)], indexToParty[minCostFlow.getHead(i)], minCostFlow.getFlow(i)));
+            }
         }
         return novatedObligations;
     }
