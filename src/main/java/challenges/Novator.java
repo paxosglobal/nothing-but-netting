@@ -45,7 +45,7 @@ public class Novator {
                                     partyToIndex.get(preference.counterPartyName()),
                                     partyToIndex.get(party.name()),
                                     preference.maxExposure(),
-                                    preference.quantifiedDisgust()
+                                    preference.aversion()
                             );
                         }));
 
