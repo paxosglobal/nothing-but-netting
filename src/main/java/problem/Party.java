@@ -7,6 +7,6 @@ public record Party(String name, Collection<Preference> preferences) {
         return preferences.stream().map(preference -> preference.counterPartyName).distinct().count() == preferences.size();
     }
 
-    public record Preference(String counterPartyName, long maxExposure, long aversion) {
+    public record Preference(String counterPartyName, long maxExposure, long costPerDollar) {
     }
 }

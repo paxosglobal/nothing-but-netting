@@ -9,8 +9,8 @@ class Main {
         final var problem = Problem.generateDefaultProblem();
         final var novatedObligations = Novator.novateObligations(problem);
         Validator.validate(novatedObligations, problem);
-        final var efficiencyScore = Scorer.score(novatedObligations, problem);
+        final var totalCost = Scorer.score(novatedObligations, problem);
         novatedObligations.forEach(System.out::println);
-        System.out.printf("\n>>>>> Your efficiency score was %s (golf rules) <<<<<%n", efficiencyScore);
+        System.out.printf("\n>>>>> Your total cost was %s <<<<<%n", totalCost);
     }
 }
