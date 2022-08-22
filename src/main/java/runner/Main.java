@@ -11,6 +11,6 @@ class Main {
         Validator.validate(novatedObligations, problem);
         final var totalCost = Scorer.score(novatedObligations, problem);
         novatedObligations.forEach(System.out::println);
-        System.out.printf("\n>>>>> Your total cost was %s <<<<<%n", totalCost);
+        System.out.printf("\n>>>>> Your total cost was %s <<<<<", totalCost);
     }
 }
