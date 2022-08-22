@@ -13,7 +13,7 @@ public class Scorer {
     private static long scorePreference(Obligation obligation, Problem problem) {
         final var toParty = problem.parties().stream().filter(party -> party.name().equals(obligation.toParty())).findFirst().orElseThrow();
         final var preference = toParty.preferences().stream().filter(pref -> pref.counterPartyName().equals(obligation.fromParty())).findFirst().orElseThrow();
-        return obligation.dollars() * preference.aversion();
+        return obligation.dollars() * preference.costPerDollar();
     }
 
 }
