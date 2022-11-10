@@ -1,6 +1,8 @@
 # nothing-but-netting
 Code for a workshop at FinTech devcon 2022!
 
+See the [talk](https://www.youtube.com/watch?v=XptDXZLwjUs)!
+
 # setup
 1. Ensure that java 17+ is installed. An unexhaustive list of options
 	- `brew install openjdk@17` - mac
